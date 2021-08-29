@@ -11,7 +11,7 @@ block_image_height = 5;
 
 function load_img(){
 	// write code to Upload golf image on the canvas
-	fabric.Image.fromURL("golf-h1.png", function(Img){
+	fabric.Image.fromURL("golf-h.png", function(Img){
 		hole_obj = Img;
 		hole_obj.scaleToWidth(50);
 		hole_obj.scaleToHeight(50);
@@ -35,7 +35,7 @@ function new_image()
 			top:ball_y,
 			left:ball_x
 		});
-		canvas.add(hole_obj);
+		canvas.add(ball_obj);
 	    });
 }
 
@@ -78,7 +78,7 @@ function my_keydown(e)
 	}
 	
 	function up()
-	{if(ball_y <=0){
+	{if(ball_y >=0){
 		ball_y=ball_y - block_image_height;
 		console.log("block image height = " + block_image_height);
 		console.log("When Up arrow key is pressed, X = " + ball_x + ",Y = "+ball_y);
@@ -92,7 +92,7 @@ function my_keydown(e)
 	function down()
 	{
 		 // Write a code to move ball downward.
-		 if(ball_y >=450){
+		 if(ball_y <=450){
 			 ball_y=ball_y + block_image_height;
 			 console.log("block image height = " + block_image_height);
 			 console.log("When Down arrow key is pressed, X = " + ball_x + ",Y = "+ball_y);
